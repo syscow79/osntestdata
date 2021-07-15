@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import javax.validation.constraints.Size;
+import java.util.List;
 
 @RestController
 @RequestMapping(path = "/v1/testdata")
@@ -22,6 +23,12 @@ public class TestDataController {
     @PostMapping(path = "/voucher")
     public VoucherCode createVoucher(@Valid @RequestBody VoucherCode voucherCode) {
         return voucherCodeService.save(voucherCode);
+    }
+
+    @GetMapping(path = "/vouchers")
+    @ResponseBody
+    public List<VoucherCode> find() {
+        return voucherCodeService.findAll();
     }
 
     @GetMapping(path = "/voucher/{id}")

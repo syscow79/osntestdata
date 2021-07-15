@@ -1,11 +1,13 @@
 package com.syscow.jiratestdata.service;
 
+import com.azure.cosmos.implementation.guava25.collect.Lists;
 import com.syscow.jiratestdata.container.VoucherCode;
 import com.syscow.jiratestdata.repository.VoucherCodeRepository;
 import org.springframework.stereotype.Service;
 
-import java.util.Date;
-import java.util.UUID;
+import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.StreamSupport;
 
 @Service
 public class VoucherCodeService {
@@ -32,5 +34,9 @@ public class VoucherCodeService {
 
     public VoucherCode findByName(String name) {
         return voucherCodeRepository.findByName(name);
+    }
+
+    public List<VoucherCode> findAll() {
+        return Lists.newArrayList(voucherCodeRepository.findAll());
     }
 }
