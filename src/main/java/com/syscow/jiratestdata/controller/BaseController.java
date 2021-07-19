@@ -9,11 +9,11 @@ import javax.validation.Valid;
 import javax.validation.constraints.Size;
 
 @RestController
-@RequestMapping(path = "/")
+@RequestMapping
 public class BaseController {
 
-    @PostMapping(path = "")
-    public String createVoucher(@Valid @RequestBody VoucherCode voucherCode) {
+    @GetMapping(path = "/")
+    public String get() {
         return "OK";
     }
 

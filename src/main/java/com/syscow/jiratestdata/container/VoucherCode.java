@@ -14,7 +14,7 @@ import java.util.Date;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Container(containerName = "osncollection")
+@Container
 public class VoucherCode {
     @Id
     private String id;
